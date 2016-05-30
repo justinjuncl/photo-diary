@@ -17,6 +17,7 @@ module.exports = function (app) {
 
 	app.use(session({
 		secret: 'KWEB',
+		cookie: { maxAge: 1000 * 60 * 60 },
 		resave: true,
 		saveUninitialized: true
 	}));

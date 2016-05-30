@@ -17,7 +17,7 @@ connect()
 	.on('error', console.log)
 	.on('disconnected', connect)
 	.once('open', function () {
-		app.listen(config.port, function () {
+		app.listen( process.env.PORT || config.port, function () {
 			console.log('Node app is running on port', config.port);
 		});
 	});
