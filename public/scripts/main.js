@@ -8,14 +8,10 @@ function getAJAX ( url, callback ) {
 	xhr.send();
 }
 
-function postAJAX ( url, data, callback ) {
+function postAJAX ( url, data ) {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhr.onload = function () {
-		if ( 200 <= xhr.status && xhr.status < 400 )
-			callback( xhr.responseText );
-	}
 	xhr.send(data);
 }
 
